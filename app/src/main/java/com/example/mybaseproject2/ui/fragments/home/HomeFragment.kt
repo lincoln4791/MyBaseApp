@@ -1,4 +1,4 @@
-package com.example.mybaseproject2.fragments.home
+package com.example.mybaseproject2.ui.fragments.home
 
 import android.os.Bundle
 import android.util.Log
@@ -33,12 +33,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         //viewModel.getUser()
         updateUserProfile()
 
-
         viewModel.user.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Resource.Success -> {
                     binding.progressbar.visible(false)
-                    updateUI(User(it.value.key,it.value.key,"",it.value.email?:"","",it.value.userid,it.value.name,""))
+                    updateUI(User("","","",it.value[0].email?:"","","","",it.value[0].name,""))
                 }
                 is Resource.Loading -> {
                     binding.progressbar.visible(true)
@@ -48,7 +47,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
             }
         })
-
 
         binding.buttonLogout.setOnClickListener {
             logout()

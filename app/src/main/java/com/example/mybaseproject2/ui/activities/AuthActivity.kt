@@ -1,4 +1,4 @@
-package com.example.mybaseproject2.activities
+package com.example.mybaseproject2.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

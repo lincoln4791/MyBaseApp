@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.mybaseproject2.fragments.home.HomeFragment"
+        android:name="com.example.mybaseproject2.ui.fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.mybaseproject2.fragments.gallery.GalleryFragment"
+        android:name="com.example.mybaseproject2.ui.fragments.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.mybaseproject2.fragments.slideshow.SlideshowFragment"
+        android:name="com.example.mybaseproject2.ui.fragments.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.mybaseproject2.fragments.profile.Profile"
+        android:name="com.example.mybaseproject2.ui.fragments.profile.Profile"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.mybaseproject2.fragments.dashboard.DashBoard"
+        android:name="com.example.mybaseproject2.ui.fragments.dashboard.DashBoard"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dash_board" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.mybaseproject2.fragments.notifications.Notifications"
+        android:name="com.example.mybaseproject2.ui.fragments.notifications.Notifications"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

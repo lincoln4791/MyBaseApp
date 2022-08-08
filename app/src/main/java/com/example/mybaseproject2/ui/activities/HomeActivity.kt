@@ -1,4 +1,4 @@
-package com.example.mybaseproject2.activities
+package com.example.mybaseproject2.ui.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -13,16 +13,19 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.mybaseproject2.R
-import com.example.mybaseproject2.fragments.home.HomeViewModel
+import com.example.mybaseproject2.ui.fragments.home.HomeViewModel
 import com.example.mybaseproject2.startNewActivity
 import kotlinx.coroutines.launch
 import com.example.mybaseproject2.data.UserPreferences
+import com.example.mybaseproject2.data.repository.UserRepository
 import com.example.mybaseproject2.databinding.ActivityHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
-    lateinit var userPreferences: UserPreferences
+    @Inject lateinit var userPreferences: UserPreferences
+    @Inject lateinit var userRepository: UserRepository
 
     private val viewModel by viewModels<HomeViewModel>()
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -72,8 +75,9 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun performLogout() = lifecycleScope.launch {
-        viewModel.logout()
+        //viewModel.logout()
         userPreferences.clear()
+        userRepository.removeAllUsersDataFromSQL()
         startNewActivity(AuthActivity::class.java)
     }
 }

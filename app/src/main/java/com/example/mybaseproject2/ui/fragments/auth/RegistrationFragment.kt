@@ -1,4 +1,4 @@
-package com.example.mybaseproject2.fragments.auth
+package com.example.mybaseproject2.ui.fragments.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

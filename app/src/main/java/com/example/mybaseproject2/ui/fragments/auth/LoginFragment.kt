@@ -1,4 +1,4 @@
-package com.example.mybaseproject2.fragments.auth
+package com.example.mybaseproject2.ui.fragments.auth
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import com.example.mybaseproject2.databinding.FragmentLoginFragentBinding
-import com.example.mybaseproject2.activities.AuthViewModel
-import com.example.mybaseproject2.activities.HomeActivity
+import com.example.mybaseproject2.ui.activities.AuthViewModel
+import com.example.mybaseproject2.ui.activities.HomeActivity
 import com.example.mybaseproject2.base.BaseFragment
 import com.example.mybaseproject2.enable
 import com.example.mybaseproject2.handleApiError
@@ -18,6 +18,7 @@ import com.example.mybaseproject2.visible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import com.example.mybaseproject2.data.network.Resource
+import com.example.mybaseproject2.data.responses.User
 
 @AndroidEntryPoint
 class LoginFragment: BaseFragment<FragmentLoginFragentBinding>(
@@ -43,6 +44,8 @@ class LoginFragment: BaseFragment<FragmentLoginFragentBinding>(
                                 it.value.key
                             )*/
                             viewModel.saveUserDetails(it.value.key,it.value.key,it.value.name,it.value.phone)
+                            viewModel.saveUserDetailsSQL(User(it.value.key,it.value.key,"",it.value.email,it.value.phone,""
+                                ,it.value.userid.toString(),it.value.name,""))
                             requireActivity().startNewActivity(HomeActivity::class.java)
                         }
                     }

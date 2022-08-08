@@ -5,8 +5,8 @@ import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.mybaseproject2.activities.HomeActivity
-import com.example.mybaseproject2.fragments.auth.LoginFragment
+import com.example.mybaseproject2.ui.activities.HomeActivity
+import com.example.mybaseproject2.ui.fragments.auth.LoginFragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import com.example.mybaseproject2.data.network.Resource
