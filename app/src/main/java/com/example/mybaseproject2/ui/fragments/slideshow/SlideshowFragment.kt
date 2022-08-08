@@ -14,4 +14,6 @@ import com.example.mybaseproject2.databinding.FragmentSlideshowBinding
 class SlideshowFragment : BaseFragment<FragmentSlideshowBinding>(FragmentSlideshowBinding::inflate) {
     private val viewModel by viewModels<SlideshowViewModel>()
 
+
+
 }
