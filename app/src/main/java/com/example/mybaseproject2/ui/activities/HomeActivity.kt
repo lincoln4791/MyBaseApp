@@ -3,6 +3,7 @@ package com.example.mybaseproject2.ui.activities
 import android.os.Bundle
 import android.view.Menu
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.mybaseproject2.R
 import com.example.mybaseproject2.ui.fragments.home.HomeViewModel
@@ -19,6 +21,7 @@ import kotlinx.coroutines.launch
 import com.example.mybaseproject2.data.UserPreferences
 import com.example.mybaseproject2.data.repository.UserRepository
 import com.example.mybaseproject2.databinding.ActivityHomeBinding
+import com.example.mybaseproject2.utils.SystemUtil
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -35,6 +38,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
+        initTheme()
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
@@ -43,6 +47,11 @@ class HomeActivity : AppCompatActivity() {
 
 
 
+    }
+
+    private fun initTheme() {
+        SystemUtil.changeNavigationBarColor(this)
+        SystemUtil.changeStatusBar(this,this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -80,4 +89,33 @@ class HomeActivity : AppCompatActivity() {
         userRepository.removeAllUsersDataFromSQL()
         startNewActivity(AuthActivity::class.java)
     }
+
+    override fun onBackPressed() {
+        if(binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        }else{
+            showExitDialog()
+
+        }
+
+
+    }
+
+    private fun showExitDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Choose an occupation")
+        builder.setTitle("Exit")
+        builder.setTitle("Are You Sure Want To Exit?")
+        builder.setPositiveButton("Yes"
+        ) { _, _ ->
+            finish()
+        }
+        builder.setNegativeButton("No"
+        ) { dialog, _ -> dialog?.dismiss() }
+
+        val dialog : AlertDialog = builder.create()
+        dialog.show()
+    }
+
+
 }

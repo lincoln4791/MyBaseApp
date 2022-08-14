@@ -3,6 +3,7 @@
     <color name="colorPrimary">#2e87eb</color>
     <color name="colorPrimaryDark">#2464AC</color>
     <color name="colorAccent">#2e87eb</color>
+    <color name="colorSecondary">#F81AFF</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
@@ -17,4 +18,22 @@
     <color name="colorTextHintDefault">#434343</color>
 
     <color name="colorTextWhite">#F3F3F3</color>
+
+
+    <!--Dark Colors-->
+    <color name="dark_surface">#121212</color>
+    <color name="dark_card1">#202020</color>
+    <color name="dark_card2">#282828</color>
+    <color name="dark_card3">#33121212</color>
+    <color name="dark_card4">#1A202020</color>
+    <color name="dark_textColor">#D9FFFFFF</color>
+    <color name="dark_textColor2">#CCFFFFFF</color>
+    <color name="dark_textColor3">#B3FFFFFF</color>
+    <color name="dark_textColor4">#99FFFFFF</color>
+    <color name="dark_textColor4_5">#66FFFFFF</color>
+    <color name="dark_textColor5">#33FFFFFF</color>
+    <color name="dark_primary">#FF3E50B4</color>
+    <color name="dark_primary2">#3E50B4</color>
+    <color name="dark_secondary">#FF3F80</color>
+    <color name="dark_secondary2">#B3FF3F80</color>
 </resources>
